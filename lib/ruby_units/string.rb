@@ -52,10 +52,11 @@ class String
   def until(time_point = ::Time.now)
     self.unit.until(time_point)
   end
-  
-  def to(other)
-    self.unit.to(other)
-  end
+ 
+  # Commented out in favor of ActiveSuppert's String#to
+  # def to(other)
+  #   self.unit.to(other)
+  # end
   
   def time(options = {})
     self.to_time(options) rescue self.to_datetime(options)
