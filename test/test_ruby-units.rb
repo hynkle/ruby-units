@@ -152,10 +152,6 @@ class TestRubyUnits < Test::Unit::TestCase
     assert_equal "2006-04-01T00:00:00+00:00", '2453826.5 days'.unit.to_datetime.to_s 
   end
   
-  def test_string_helpers
-    assert_equal '1 mm'.to('in'), Unit('1 mm').to('in')
-  end
-
   [:sin, :cos, :tan, :sinh, :cosh, :tanh].each do |trig|
 		define_method("test_#{trig}") do
 			assert_equal Math.send(trig, Math::PI), Math.send(trig, "180 deg".unit)
